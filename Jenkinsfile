@@ -2,7 +2,7 @@ pipeline {
   agent any
   parameters {
       string(name: 'ITEMUSER', defaultValue: 'wyg', description: '以什么环境用户执行此次构建？')
-      string(name: 'BRANCH', defaultValue: 'feature-main', description: '使用什么分支用于此次构建？')
+      string(name: 'BRANCH', defaultValue: 'master', description: '使用什么分支用于此次构建？')
   }
   stages {
     stage('pull') {
