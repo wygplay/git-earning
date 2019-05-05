@@ -15,7 +15,7 @@ pipeline {
     stage('deployment') {
       steps {
         dir(path: './') {
-          ansiblePlaybook(playbook: "./ansible/${ITEMNAME}.yaml", credentialsId: "ssh_username_with_private_key_${params.ITEMUSER}", disableHostKeyChecking: true, extras: '--extra-vars \'{"src_dir":"${WORKSPACE}/${ITEMNAME}"}\'', colorized: true, inventory: "./ansible/inventory/${params.ITEMUSER}")
+          ansiblePlaybook(playbook: "./ansible/${ITEMNAME}.yaml", disableHostKeyChecking: true, extras: '--extra-vars \'{"src_dir":"${WORKSPACE}/${ITEMNAME}"}\'', colorized: true, inventory: "./ansible/inventory/${params.ITEMUSER}")
         }
       }
     }
