@@ -15,7 +15,7 @@ pipeline {
         # 基于当前jenkins pipeline的工作空间根目录即${WORKSPACE}在./develop目录执行（若该目录不存在则创建）
         dir(path: "./${ITEMNAME}") {
           # 执行git命令
-          git(url: "http://.git")
+          git(url: "https://github.com/wygplay/git-learning.git")
         }
       }
     }
