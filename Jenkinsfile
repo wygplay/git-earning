@@ -15,7 +15,7 @@ pipeline {
     stage('deployment') {
       steps {
         dir(path: './') {
-          ansiblePlaybook(playbook: "./ansible/${ITEMNAME}.yaml", disableHostKeyChecking: true, extras: '--extra-vars \'{"src_dir":"${WORKSPACE}/${ITEMNAME}"}\'', colorized: true, inventory: "./ansible/inventory/${params.ITEMUSER}")
+          ansiblePlaybook(playbook: "./ansible/${ITEMNAME}.yaml", disableHostKeyChecking: true, extras: '--extra-vars \'{"src_dir":"${WORKSPACE}"}\'', colorized: true, inventory: "./ansible/inventory/${params.ITEMUSER}")
         }
       }
     }
