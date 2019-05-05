@@ -7,13 +7,15 @@ pipeline {
   stages {
     stage('pull') {
       steps {
-        dir(path: "./${ITEMNAME}") {
+        dir(path: "./") {
           git(url: "https://github.com/wygplay/git-learning.git")
         }
       }
     }
+    
   }
   environment {
     ITEMNAME = 'git-learning'
-  }     
+  }
+  
 }
